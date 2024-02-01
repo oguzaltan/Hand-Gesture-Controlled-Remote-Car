@@ -1,18 +1,22 @@
 # Hand Gesture Controlled VR Remote Car
 
+Demo video: 
+[Hand Gesture Controlled VR Remote Car](https://youtube.com/shorts/HPI0GBkq9cU?si=BJlQORSSjnq1my4r)
+
 ## Introduction
-In this project, the aim is to design a hand gesture-controlled remote car with a VR cam installed on top. The gesture control is done by a gyroscope and an accelerometer, installed on a glove alongside an Arduino Uno to handle the communication between the user and the car. The communication is done via Bluetooth connection and to receive the signal and control the motors and the car, FRDM-KL25Z board is used. All the code is in embedded C language. A small action cam is mounted on top of the car and the video feed is streamed to a smartphone connected to VR glasses, so the user fully emerges to the experience. 
+The Hand Gesture Controlled VR Remote Car project aims to develop a vehicle controlled by hand gestures, enhanced with a VR camera for an immersive experience. Through a combination of gyroscopes, accelerometers, and Bluetooth communication facilitated by Arduino Uno and FRDM-KL25Z boards, users can control the car's movements via intuitive hand gestures. The integration of an action camera allows real-time video streaming to a smartphone connected to VR glasses, enhancing user immersion.
 
 ## Design Specification Plan
-First, we use 4WD robot car chassis and 4 servo motors with wheels. On the chassis, there is FRDM-KL25Z, a motor driver, battery, and Bluetooth receiver. All of these sensors work together to control the motion of the vehicle, according to the gesture input coming from the user’s hand gestures. For the hand glove part, an Arduino, gyroscope/accelerometer, and another transmitter Bluetooth module are used to create the signal to control the car. Two Bluetooth modules are paired in a Master-Slave configuration. 
+The project utilizes a 4WD robot car chassis equipped with four servo motors for wheel movement. Components including FRDM-KL25Z, a motor driver, battery, and Bluetooth receiver are integrated onto the chassis to manage vehicle dynamics based on user gestures. The hand gesture control system consists of an Arduino, gyroscopes/accelerometers, and a transmitter Bluetooth module, establishing communication with the car through a Master-Slave Bluetooth configuration.
+For gesturing, if the users hold their hand level, there is no signal present, so the car does not move. Tilting the hand forward means acceleration for the car which makes the car move forward. Conversely, tilting the hand backward means rear acceleration, which makes the car move backward. If the users tilt their hand clockwise, only the left 2 wheels work so the car steers to the right and vice versa for the counterclockwise motion. Finally, an action cam is installed on the car and the video feed is streamed over its wireless network, with its smartphone application. The sensors and modules are all programmed with Embedded-C Language, on the FRDM-KL25Z and Arduino Uno. 
 
-For gesturing, if the users hold their hand level, there is no signal present, so the car does not move. Tilting the hand forward means acceleration for the car which makes the car move forward. Conversely, tilting the hand backward means rear acceleration, which makes the car move backward. If the users tilt their hand clockwise, only the left 2 wheels work so the car steers to the right and vice versa for the counterclockwise motion. 
+Users can control the car through specific hand gestures:
+* Holding the hand level maintains the car stationary.
+* Tilting the hand forward accelerates the car forward.
+* Tilting the hand backward initiates reverse motion.
+* Clockwise hand tilt steers the car to the right, while counterclockwise motion steers it left.
 
-Finally, an action cam is installed on the car and the video feed is streamed over its wireless network, with its smartphone application.
-
-The sensors and modules are all programmed with Embedded-C Language, on the FRDM-KL25Z and Arduino Uno. 
-
-Required peripherals are as follows:
+## Required Peripherals
 *	FRDM-KL25Z Board 
 *	Arduino Uno
 *	2 * HC-05 Bluetooth Modules
